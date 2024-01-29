@@ -44,16 +44,7 @@ if ($links) {
  </div>';
       $content = str_replace('<body>', $banner, $content);
 
-      $footer = '<li><a href="/subjects/ancient-history/" target="null">Ancient history</a></li>
-      <li><a href="/subjects/arabic/" target="null">Arabic</a></li>
-<li><a href="/subjects/archaeology/" target="null">Archaeology</a></li>';
 
-//$footer = strip_tags($footer);
-
-  //  $content = preg_replace('#<div class="col-sm-4">(.*?)</div>#', '', $content);
-echo $content;
-     $content = str_replace($footer, 'gone gone gone', $content);
-     echo $content;
       // Fix images
       $assets_old = '/assets/';
       $assets_replace = 'https://www.st-andrews.ac.uk/assets/';
@@ -98,6 +89,16 @@ echo $content;
       $bc_pg_fix = '<a href="https://archive.st-andrews.ac.uk/courses/2023-2024/pg/index.html">';
       $content = str_replace($bc_pg_old, $bc_pg_fix, $content);
      
+      $footer = '<li><a href="/subjects/ancient-history/" target="null">Ancient history</a></li>
+      <li><a href="/subjects/arabic/" target="null">Arabic</a></li>
+<li><a href="/subjects/archaeology/" target="null">Archaeology</a></li>';
+
+//$footer = strip_tags($footer);
+
+  //  $content = preg_replace('#<div class="col-sm-4">(.*?)</div>#', '', $content);
+echo $content;
+     $content = str_replace($footer, 'gone gone gone', $content);
+     echo $content;
 
 
       file_put_contents($file, $content);
